@@ -22,6 +22,6 @@ Route::get('/users', 'UserController@listAction');
 
 Route::get('/users/{id}', 'UserController@showAction');
 
-//
+
 
 
