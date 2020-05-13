@@ -16,7 +16,6 @@ class UserController extends Controller
         //dd debug;
         //dd($users);
 
-
         //item.length
         return response()->json([
             'status' => 1,

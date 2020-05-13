@@ -16,11 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('contacts', 'ContactController');
 //
 //新增一個users api
 Route::get('/users', 'UserController@listAction');
 
 Route::get('/users/{id}', 'UserController@showAction');
+
+
+
+
+
+// Route::apiResource('contacts', 'ContactController');
 
 //
 
