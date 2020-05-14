@@ -85,8 +85,10 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //提出ＲＥＱＵＥＳＴ 
     public function update(Request $request, $id)
     {
+        //設定request validate required 沒輸入資料會通知
         $request->validate([
             'first_name'=>'required',
             'last_name'=>'required',

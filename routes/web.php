@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+//新增 contacts api 路徑
 Route::resource('contacts', 'ContactController');
 //
 //新增一個users api
