@@ -88,7 +88,7 @@ class ContactController extends Controller
     //提出ＲＥＱＵＥＳＴ 
     public function update(Request $request, $id)
     {
-        //設定request validate required 沒輸入資料會通知
+        //設定request validate required 沒輸入資料會跳錯誤
         $request->validate([
             'first_name'=>'required',
             'last_name'=>'required',

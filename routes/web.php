@@ -24,5 +24,14 @@ Route::get('/users', 'UserController@listAction');
 
 Route::get('/users/{id}', 'UserController@showAction');
 
+//新增中介層範例
+
+Route::middleware('before')->get('/before', function (){
+    echo 'in Route';
+});
+
+Route::middleware('after')->get('/after', function (){
+    echo 'in Route';
+});
 
 

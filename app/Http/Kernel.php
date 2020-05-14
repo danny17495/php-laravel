@@ -20,6 +20,9 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+
+        //加入自己新增的中介層，這邊為全域若設定全部頁面都會顯示
+        // \App\Http\Middleware\beforeMiddleware::class,
     ];
 
     /**
@@ -51,6 +54,8 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+
+     //中介層路徑設定
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
@@ -62,5 +67,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        //自定義中介層名字
+        'before' => \App\Http\Middleware\beforeMiddleware::class,
+        'after' => \App\Http\Middleware\afterMiddleware::class,
     ];
 }
