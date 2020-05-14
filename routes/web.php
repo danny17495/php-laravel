@@ -26,10 +26,3 @@ Route::get('/users/{id}', 'UserController@showAction');
 
 
 
-
-
-// Route::apiResource('contacts', 'ContactController');
-
-//
-
-

@@ -3,17 +3,6 @@
 @section('main')
 <div class="row">
 <div class="col-sm-12">
-
-  @if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}  
-    </div>
-  @endif
-</div>
-<div>
-    <a style="margin: 19px;" href="{{ route('contacts.create')}}" class="btn btn-primary">New contact</a>
-    </div>  
-<div class="col-sm-12">
     <h1 class="display-3">Contacts</h1>     
   <table class="table table-striped">
     <thead>
@@ -37,7 +26,7 @@
             <td>{{$contact->city}}</td>
             <td>{{$contact->country}}</td>
             <td>
-                <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-primary">Edit</a>
+                <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-primary"><button>Edit</button></a>
             </td>
             <td>
                 <form action="{{ route('contacts.destroy', $contact->id)}}" method="post">
@@ -51,5 +40,18 @@
     </tbody>
   </table>
 <div>
+<!-- 新增資料按鈕 -->
+<div>
+    <a style="margin: 19px;" href="{{ route('contacts.create')}}" class="btn btn-primary">Add New Contact</a>
+    </div>  
+</div>
+<!-- 成功訊息 -->
+<div class="col-sm-12">
+
+  @if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div>
+  @endif
 </div>
 @endsection

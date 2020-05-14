@@ -4,7 +4,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laravel 7 & MySQL CRUD Tutorial</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
-</head>
+  <style>
+  td{
+    text-align:center;
+    border:3px solid #ddd;
+  }
+  
+  
+  </style>
 <body>
   <div class="container">
     @yield('main')
